@@ -38,8 +38,8 @@
             this.btnSpecialAttack = new System.Windows.Forms.Button();
             this.btnAttack = new System.Windows.Forms.Button();
             this.lblPlayerTurnHp = new System.Windows.Forms.Label();
-            this.rtbBattleLog = new System.Windows.Forms.RichTextBox();
             this.btnRest = new System.Windows.Forms.Button();
+            this.rtbBattleLog = new System.Windows.Forms.RichTextBox();
             this.gbxBattleBox.SuspendLayout();
             this.gbxOpponent.SuspendLayout();
             this.gbxPlayerTurn.SuspendLayout();
@@ -157,16 +157,6 @@
             this.lblPlayerTurnHp.TabIndex = 0;
             this.lblPlayerTurnHp.Text = "HP: X";
             // 
-            // rtbBattleLog
-            // 
-            this.rtbBattleLog.BackColor = System.Drawing.Color.Firebrick;
-            this.rtbBattleLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbBattleLog.Location = new System.Drawing.Point(10, 19);
-            this.rtbBattleLog.Name = "rtbBattleLog";
-            this.rtbBattleLog.Size = new System.Drawing.Size(589, 156);
-            this.rtbBattleLog.TabIndex = 0;
-            this.rtbBattleLog.Text = "";
-            // 
             // btnRest
             // 
             this.btnRest.BackColor = System.Drawing.Color.Firebrick;
@@ -179,6 +169,16 @@
             this.btnRest.Text = "Rest";
             this.btnRest.UseVisualStyleBackColor = false;
             this.btnRest.Visible = false;
+            // 
+            // rtbBattleLog
+            // 
+            this.rtbBattleLog.BackColor = System.Drawing.Color.Firebrick;
+            this.rtbBattleLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbBattleLog.Location = new System.Drawing.Point(10, 19);
+            this.rtbBattleLog.Name = "rtbBattleLog";
+            this.rtbBattleLog.Size = new System.Drawing.Size(589, 156);
+            this.rtbBattleLog.TabIndex = 0;
+            this.rtbBattleLog.Text = "";
             // 
             // Form2
             // 
@@ -212,7 +212,7 @@
         private System.Windows.Forms.Button btnSpecialAttack;
         private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.Label lblPlayerTurnHp;
-        private System.Windows.Forms.RichTextBox rtbBattleLog;
         private System.Windows.Forms.Button btnRest;
+        private System.Windows.Forms.RichTextBox rtbBattleLog;
     }
 }

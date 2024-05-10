@@ -1,5 +1,8 @@
-Dragon Game Background:
+Dragon Game Background(Form1):
 https://images.app.goo.gl/ndZLDEF3sV8Wuajv5
 
-Battle Screen Background:
+Battle Screen Background(Form2):
 https://images.app.goo.gl/GLFgkG5Bzoybvipn6
+
+Dragon Logo:
+https://images.app.goo.gl/Y7oGfZdh3ts8Fux66

@@ -18,5 +18,22 @@ namespace Game_Dev_POE_2024___FINAL
             InitializeComponent();
             Instance = this;
         }
+        int RandomRoll()
+        {
+            Random Diceroll = new Random();
+            int roll = Diceroll.Next(1,7);
+            return roll;
+        }
+
+        void TakeInitiative()
+        {
+            int p1Roll = 0;
+            int p2Roll = 0;
+            while (p1Roll == p2Roll)
+            {
+                p1Roll = RandomRoll();
+                p2Roll = RandomRoll();
+            }
+        }
     }
 }

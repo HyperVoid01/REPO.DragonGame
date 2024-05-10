@@ -70,6 +70,7 @@
             this.btnStartGame.TabIndex = 12;
             this.btnStartGame.Text = "Start Game";
             this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // lblDragonStats
             // 
@@ -110,6 +111,7 @@
             this.btnPlayerSave2.TabIndex = 5;
             this.btnPlayerSave2.Text = "Save";
             this.btnPlayerSave2.UseVisualStyleBackColor = true;
+            this.btnPlayerSave2.Click += new System.EventHandler(this.btnPlayerSave2_Click);
             // 
             // gbxDragonType2
             // 
@@ -158,10 +160,12 @@
             // radFireDragon2
             // 
             this.radFireDragon2.AutoSize = true;
+            this.radFireDragon2.Checked = true;
             this.radFireDragon2.Location = new System.Drawing.Point(19, 27);
             this.radFireDragon2.Name = "radFireDragon2";
             this.radFireDragon2.Size = new System.Drawing.Size(82, 21);
             this.radFireDragon2.TabIndex = 0;
+            this.radFireDragon2.TabStop = true;
             this.radFireDragon2.Text = "Fire Dragon";
             this.radFireDragon2.UseVisualStyleBackColor = true;
             // 
@@ -230,6 +234,7 @@
             this.btnPlayerSave1.TabIndex = 5;
             this.btnPlayerSave1.Text = "Save";
             this.btnPlayerSave1.UseVisualStyleBackColor = true;
+            this.btnPlayerSave1.Click += new System.EventHandler(this.btnPlayerSave1_Click);
             // 
             // gbxDragonType1
             // 
@@ -279,10 +284,12 @@
             // radFireDragon1
             // 
             this.radFireDragon1.AutoSize = true;
+            this.radFireDragon1.Checked = true;
             this.radFireDragon1.Location = new System.Drawing.Point(19, 27);
             this.radFireDragon1.Name = "radFireDragon1";
             this.radFireDragon1.Size = new System.Drawing.Size(82, 21);
             this.radFireDragon1.TabIndex = 0;
+            this.radFireDragon1.TabStop = true;
             this.radFireDragon1.Text = "Fire Dragon";
             this.radFireDragon1.UseVisualStyleBackColor = true;
             // 

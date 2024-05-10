@@ -15,11 +15,11 @@ namespace Game_Dev_POE_2024___FINAL
         public static Form1 instance;
         //Player 1 & 2 Arrays
         //0 - Player Name, 1 - Dragon Name, 2 - Dragon Type
-        string[] p1Data = new string[3];
-        string[] p2Data = new string[3];
+        public string[] p1Data = new string[3];
+        public string[] p2Data = new string[3];
         //0 - Health Points, 1 - Attack Dmg, 2 - Special Attack Dmg, 3 - Block Dmg
-        int[] p1Values = new int[4];
-        int[] p2Values = new int[4];
+        public int[] p1Values = new int[4];
+        public int[] p2Values = new int[4];
 
         //Fire Dragon Constants
         const string FIRE_DRAG_NAME = "Fire";

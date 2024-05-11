@@ -135,6 +135,7 @@
             this.btnRest.Text = "Rest";
             this.btnRest.UseVisualStyleBackColor = false;
             this.btnRest.Visible = false;
+            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
             // btnBlock
             // 

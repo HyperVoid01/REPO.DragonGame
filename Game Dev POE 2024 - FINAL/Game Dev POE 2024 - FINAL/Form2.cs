@@ -15,7 +15,7 @@ namespace Game_Dev_POE_2024___FINAL
         public static Form2 Instance;
         int playerturn; //1 - player1, 2 - player2
         int damage; //Used to display damage dealt, even after block
-        int roundCounter = 1;
+        int roundCounter = 0;
         bool blockFlag1 = false; //Player 1 block
         bool blockFlag2 = false; //Player 2 block
         public Form2()
@@ -23,6 +23,20 @@ namespace Game_Dev_POE_2024___FINAL
             InitializeComponent();
             Instance = this;
             TakeInitiative();
+        }
+
+        void Rounds() //Rerolls for initiative every round or every 2 turns
+        {
+            roundCounter++;
+            if (roundCounter == 2)
+            {
+                roundCounter = 0;
+                TakeInitiative();
+            }
+            else if (playerturn == 1)
+                Player2Customise();
+            else if (playerturn == 2)
+                Player1Customise();
         }
         int RandomRoll()
         {
@@ -49,7 +63,7 @@ namespace Game_Dev_POE_2024___FINAL
         void Player1Customise() //Player 1 Initiative
         {
             playerturn = 1;
-            rtbBattleLog.Text += $"\n***********************\n{Form1.instance.p1Data[0]}'s Turn:";
+            rtbBattleLog.Text += $"\n{Form1.instance.p1Data[0]}'s Turn:";
             gbxPlayerTurn.Text = $"{Form1.instance.p1Data[1]}, the {Form1.instance.p1Data[2]} Dragon's Turn"; //Dragon Name, Dragon Type
             Form2.Instance.Text = $"{Form1.instance.p1Data[0]}'s Turn"; //Player Name
             lblPlayerTurnHp.Text = $"HP: {Form1.instance.p1Values[0]}"; //HP
@@ -61,7 +75,7 @@ namespace Game_Dev_POE_2024___FINAL
         void Player2Customise() //Player 2 Initiative
         {
             playerturn = 2;
-            rtbBattleLog.Text += $"\n***********************\n{Form1.instance.p2Data[0]}'s Turn:";
+            rtbBattleLog.Text += $"\n{Form1.instance.p2Data[0]}'s Turn:";
             gbxPlayerTurn.Text = $"{Form1.instance.p2Data[1]}, the {Form1.instance.p2Data[2]} Dragon's Turn"; //Dragon Name, Dragon Type
             Form2.Instance.Text = $"{Form1.instance.p2Data[0]}'s Turn"; //Player Name
             lblPlayerTurnHp.Text = $"HP: {Form1.instance.p2Values[0]}"; //HP
@@ -76,6 +90,7 @@ namespace Game_Dev_POE_2024___FINAL
                 Player1Attack();
             else if (playerturn == 2)
                 Player2Attack();
+            Rounds();
         }
 
         private void btnSpecialAttack_Click(object sender, EventArgs e)
@@ -85,7 +100,11 @@ namespace Game_Dev_POE_2024___FINAL
 
         private void btnBlock_Click(object sender, EventArgs e)
         {
-
+            if (playerturn == 1)
+                Player1Block();
+            else if (playerturn == 2)
+                Player2Block();
+            Rounds();
         }
 
         void Player1Attack()
@@ -128,11 +147,29 @@ namespace Game_Dev_POE_2024___FINAL
                     rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} blocks {Form1.instance.p2Data[1]}'s whole attacks!";
                     rtbBattleLog.Text += $"\n***********************\n";
                 }
-                else damage = Form1.instance.p2Values[1] - Form1.instance.p1Values[3];
-                Form1.instance.p1Values[0] -= damage;
-                rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} attacks {Form1.instance.p1Data[1]} for {damage} damage!";
-                rtbBattleLog.Text += $"\n***********************\n";
+                else
+                {
+                    damage = Form1.instance.p2Values[1] - Form1.instance.p1Values[3];
+                    Form1.instance.p1Values[0] -= damage;
+                    rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} attacks {Form1.instance.p1Data[1]} for {damage} damage!";
+                    rtbBattleLog.Text += $"\n***********************\n";
+                }
             }
+        }
+
+        void Player1Block()
+        {
+            blockFlag1 = true;
+            blockFlag2 = false;
+            rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} chooses to block!";
+            rtbBattleLog.Text += $"\n***********************\n";
+        }
+        void Player2Block()
+        {
+            blockFlag2 = true;
+            blockFlag1 = false;
+            rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} chooses to block!";
+            rtbBattleLog.Text += $"\n***********************\n";
         }
     }
 }

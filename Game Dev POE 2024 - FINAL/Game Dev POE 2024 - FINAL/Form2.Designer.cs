@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.gbxBattleBox = new System.Windows.Forms.GroupBox();
+            this.rtbBattleLog = new System.Windows.Forms.RichTextBox();
             this.gbxOpponent = new System.Windows.Forms.GroupBox();
             this.lblOpponentDragon = new System.Windows.Forms.Label();
             this.lblOpponentHp = new System.Windows.Forms.Label();
             this.gbxPlayerTurn = new System.Windows.Forms.GroupBox();
+            this.btnRest = new System.Windows.Forms.Button();
             this.btnBlock = new System.Windows.Forms.Button();
             this.btnSpecialAttack = new System.Windows.Forms.Button();
             this.btnAttack = new System.Windows.Forms.Button();
             this.lblPlayerTurnHp = new System.Windows.Forms.Label();
-            this.btnRest = new System.Windows.Forms.Button();
-            this.rtbBattleLog = new System.Windows.Forms.RichTextBox();
             this.gbxBattleBox.SuspendLayout();
             this.gbxOpponent.SuspendLayout();
             this.gbxPlayerTurn.SuspendLayout();
@@ -59,6 +59,17 @@
             this.gbxBattleBox.TabIndex = 5;
             this.gbxBattleBox.TabStop = false;
             this.gbxBattleBox.Text = "Battle Log";
+            // 
+            // rtbBattleLog
+            // 
+            this.rtbBattleLog.BackColor = System.Drawing.Color.Firebrick;
+            this.rtbBattleLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbBattleLog.Location = new System.Drawing.Point(10, 19);
+            this.rtbBattleLog.Name = "rtbBattleLog";
+            this.rtbBattleLog.ReadOnly = true;
+            this.rtbBattleLog.Size = new System.Drawing.Size(589, 156);
+            this.rtbBattleLog.TabIndex = 0;
+            this.rtbBattleLog.Text = "";
             // 
             // gbxOpponent
             // 
@@ -83,6 +94,7 @@
             this.lblOpponentDragon.Size = new System.Drawing.Size(107, 25);
             this.lblOpponentDragon.TabIndex = 2;
             this.lblOpponentDragon.Text = "X, the X Dragon";
+            this.lblOpponentDragon.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblOpponentHp
             // 
@@ -111,6 +123,19 @@
             this.gbxPlayerTurn.TabStop = false;
             this.gbxPlayerTurn.Text = "X, the X Dragon\'s Turn";
             // 
+            // btnRest
+            // 
+            this.btnRest.BackColor = System.Drawing.Color.Firebrick;
+            this.btnRest.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRest.ForeColor = System.Drawing.Color.Black;
+            this.btnRest.Location = new System.Drawing.Point(7, 45);
+            this.btnRest.Name = "btnRest";
+            this.btnRest.Size = new System.Drawing.Size(266, 178);
+            this.btnRest.TabIndex = 4;
+            this.btnRest.Text = "Rest";
+            this.btnRest.UseVisualStyleBackColor = false;
+            this.btnRest.Visible = false;
+            // 
             // btnBlock
             // 
             this.btnBlock.BackColor = System.Drawing.Color.Firebrick;
@@ -122,6 +147,7 @@
             this.btnBlock.TabIndex = 3;
             this.btnBlock.Text = "Block";
             this.btnBlock.UseVisualStyleBackColor = false;
+            this.btnBlock.Click += new System.EventHandler(this.btnBlock_Click);
             // 
             // btnSpecialAttack
             // 
@@ -134,6 +160,7 @@
             this.btnSpecialAttack.TabIndex = 2;
             this.btnSpecialAttack.Text = "Special Attack";
             this.btnSpecialAttack.UseVisualStyleBackColor = false;
+            this.btnSpecialAttack.Click += new System.EventHandler(this.btnSpecialAttack_Click);
             // 
             // btnAttack
             // 
@@ -146,6 +173,7 @@
             this.btnAttack.TabIndex = 1;
             this.btnAttack.Text = "Attack";
             this.btnAttack.UseVisualStyleBackColor = false;
+            this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // lblPlayerTurnHp
             // 
@@ -156,29 +184,6 @@
             this.lblPlayerTurnHp.Size = new System.Drawing.Size(55, 31);
             this.lblPlayerTurnHp.TabIndex = 0;
             this.lblPlayerTurnHp.Text = "HP: X";
-            // 
-            // btnRest
-            // 
-            this.btnRest.BackColor = System.Drawing.Color.Firebrick;
-            this.btnRest.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRest.ForeColor = System.Drawing.Color.Black;
-            this.btnRest.Location = new System.Drawing.Point(7, 44);
-            this.btnRest.Name = "btnRest";
-            this.btnRest.Size = new System.Drawing.Size(266, 178);
-            this.btnRest.TabIndex = 4;
-            this.btnRest.Text = "Rest";
-            this.btnRest.UseVisualStyleBackColor = false;
-            this.btnRest.Visible = false;
-            // 
-            // rtbBattleLog
-            // 
-            this.rtbBattleLog.BackColor = System.Drawing.Color.Firebrick;
-            this.rtbBattleLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbBattleLog.Location = new System.Drawing.Point(10, 19);
-            this.rtbBattleLog.Name = "rtbBattleLog";
-            this.rtbBattleLog.Size = new System.Drawing.Size(589, 156);
-            this.rtbBattleLog.TabIndex = 0;
-            this.rtbBattleLog.Text = "";
             // 
             // Form2
             // 

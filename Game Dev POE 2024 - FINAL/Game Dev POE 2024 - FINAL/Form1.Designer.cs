@@ -160,31 +160,29 @@
             // radFireDragon2
             // 
             this.radFireDragon2.AutoSize = true;
-            this.radFireDragon2.Checked = true;
             this.radFireDragon2.Location = new System.Drawing.Point(19, 27);
             this.radFireDragon2.Name = "radFireDragon2";
             this.radFireDragon2.Size = new System.Drawing.Size(82, 21);
             this.radFireDragon2.TabIndex = 0;
-            this.radFireDragon2.TabStop = true;
             this.radFireDragon2.Text = "Fire Dragon";
             this.radFireDragon2.UseVisualStyleBackColor = true;
             // 
             // txtDragonName2
             // 
             this.txtDragonName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDragonName2.Font = new System.Drawing.Font("Agency FB", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDragonName2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDragonName2.Location = new System.Drawing.Point(123, 51);
             this.txtDragonName2.Name = "txtDragonName2";
-            this.txtDragonName2.Size = new System.Drawing.Size(221, 21);
+            this.txtDragonName2.Size = new System.Drawing.Size(221, 23);
             this.txtDragonName2.TabIndex = 3;
             // 
             // txtPlayerName2
             // 
             this.txtPlayerName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPlayerName2.Font = new System.Drawing.Font("Agency FB", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayerName2.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlayerName2.Location = new System.Drawing.Point(123, 26);
             this.txtPlayerName2.Name = "txtPlayerName2";
-            this.txtPlayerName2.Size = new System.Drawing.Size(221, 21);
+            this.txtPlayerName2.Size = new System.Drawing.Size(221, 23);
             this.txtPlayerName2.TabIndex = 2;
             // 
             // lblDragonName2
@@ -284,32 +282,30 @@
             // radFireDragon1
             // 
             this.radFireDragon1.AutoSize = true;
-            this.radFireDragon1.Checked = true;
             this.radFireDragon1.Location = new System.Drawing.Point(19, 27);
             this.radFireDragon1.Name = "radFireDragon1";
             this.radFireDragon1.Size = new System.Drawing.Size(82, 21);
             this.radFireDragon1.TabIndex = 0;
-            this.radFireDragon1.TabStop = true;
             this.radFireDragon1.Text = "Fire Dragon";
             this.radFireDragon1.UseVisualStyleBackColor = true;
             // 
             // txtDragonName1
             // 
             this.txtDragonName1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDragonName1.Font = new System.Drawing.Font("Agency FB", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDragonName1.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDragonName1.Location = new System.Drawing.Point(123, 53);
             this.txtDragonName1.Name = "txtDragonName1";
-            this.txtDragonName1.Size = new System.Drawing.Size(221, 21);
+            this.txtDragonName1.Size = new System.Drawing.Size(221, 23);
             this.txtDragonName1.TabIndex = 3;
             // 
             // txtPlayerName1
             // 
             this.txtPlayerName1.BackColor = System.Drawing.SystemColors.Window;
             this.txtPlayerName1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPlayerName1.Font = new System.Drawing.Font("Agency FB", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlayerName1.Font = new System.Drawing.Font("Agency FB", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlayerName1.Location = new System.Drawing.Point(123, 26);
             this.txtPlayerName1.Name = "txtPlayerName1";
-            this.txtPlayerName1.Size = new System.Drawing.Size(221, 21);
+            this.txtPlayerName1.Size = new System.Drawing.Size(221, 23);
             this.txtPlayerName1.TabIndex = 2;
             // 
             // lblDragonName1

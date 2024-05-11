@@ -106,7 +106,7 @@ namespace Game_Dev_POE_2024___FINAL
                 p2Values[2] = FIRE_DRAG_SPATK;
                 p2Values[3] = FIRE_DRAG_BLOCK;
             }
-            else if (radIceDragon1.Checked == true)
+            if (radIceDragon2.Checked == true)
             {
                 p2Data[2] = ICE_DRAG_NAME;
                 p2Values[0] = ICE_DRAG_HP;
@@ -114,7 +114,7 @@ namespace Game_Dev_POE_2024___FINAL
                 p2Values[2] = ICE_DRAG_SPATK;
                 p2Values[3] = ICE_DRAG_BLOCK;
             }
-            else if (radWindDragon1.Checked == true)
+            if (radWindDragon2.Checked == true)
             {
                 p2Data[2] = WIND_DRAG_NAME;
                 p2Values[0] = WIND_DRAG_HP;
@@ -122,7 +122,7 @@ namespace Game_Dev_POE_2024___FINAL
                 p2Values[2] = WIND_DRAG_SPATK;
                 p2Values[3] = WIND_DRAG_BLOCK;
             }
-            else if (radEarthDragon1.Checked == true)
+            if (radEarthDragon2.Checked == true)
             {
                 p2Data[2] = EARTH_DRAG_NAME;
                 p2Values[0] = EARTH_DRAG_HP;
@@ -136,16 +136,19 @@ namespace Game_Dev_POE_2024___FINAL
         {
             if (txtPlayerName1.Text != "" && txtDragonName1.Text != "")
             {
-                btnPlayerSave1.Enabled = false;
-                txtPlayerName1.Enabled = false;
-                txtDragonName1.Enabled = false;
-                radEarthDragon1.Enabled = false;
-                radWindDragon1.Enabled = false;
-                radFireDragon1.Enabled = false;
-                radIceDragon1.Enabled = false;
-                SaveValues1();
-                if (btnPlayerSave1.Enabled == false && btnPlayerSave2.Enabled == false)
-                    btnStartGame.Enabled = true;
+                if (radFireDragon1.Checked == true || radIceDragon1.Checked == true || radWindDragon1.Checked == true || radEarthDragon1.Checked == true)
+                {
+                    btnPlayerSave1.Enabled = false;
+                    txtPlayerName1.Enabled = false;
+                    txtDragonName1.Enabled = false;
+                    radEarthDragon1.Enabled = false;
+                    radWindDragon1.Enabled = false;
+                    radFireDragon1.Enabled = false;
+                    radIceDragon1.Enabled = false;
+                    SaveValues1();
+                    if (btnPlayerSave1.Enabled == false && btnPlayerSave2.Enabled == false)
+                        btnStartGame.Enabled = true;
+                }
             }
         }
 
@@ -153,16 +156,19 @@ namespace Game_Dev_POE_2024___FINAL
         {
             if (txtPlayerName2.Text != "" && txtDragonName2.Text != "")
             {
-                btnPlayerSave2.Enabled = false;
-                txtPlayerName2.Enabled = false;
-                txtDragonName2.Enabled = false;
-                radEarthDragon2.Enabled = false;
-                radWindDragon2.Enabled = false;
-                radFireDragon2.Enabled = false;
-                radIceDragon2.Enabled = false;
-                SaveValues2();
-                if (btnPlayerSave1.Enabled == false && btnPlayerSave2.Enabled == false)
-                    btnStartGame.Enabled = true;
+                if (radFireDragon2.Checked == true || radIceDragon2.Checked == true || radWindDragon2.Checked == true || radEarthDragon2.Checked == true)
+                {
+                    btnPlayerSave2.Enabled = false;
+                    txtPlayerName2.Enabled = false;
+                    txtDragonName2.Enabled = false;
+                    radEarthDragon2.Enabled = false;
+                    radWindDragon2.Enabled = false;
+                    radFireDragon2.Enabled = false;
+                    radIceDragon2.Enabled = false;
+                    SaveValues2();
+                    if (btnPlayerSave1.Enabled == false && btnPlayerSave2.Enabled == false)
+                        btnStartGame.Enabled = true;
+                }
             }
         }
 

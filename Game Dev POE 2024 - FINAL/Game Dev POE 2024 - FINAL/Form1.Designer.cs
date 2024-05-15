@@ -136,6 +136,7 @@
             this.radEarthDragon2.TabIndex = 3;
             this.radEarthDragon2.Text = "Earth Dragon";
             this.radEarthDragon2.UseVisualStyleBackColor = true;
+            this.radEarthDragon2.CheckedChanged += new System.EventHandler(this.radEarthDragon2_CheckedChanged);
             // 
             // radWindDragon2
             // 
@@ -146,6 +147,7 @@
             this.radWindDragon2.TabIndex = 2;
             this.radWindDragon2.Text = "Wind Dragon";
             this.radWindDragon2.UseVisualStyleBackColor = true;
+            this.radWindDragon2.CheckedChanged += new System.EventHandler(this.radWindDragon2_CheckedChanged);
             // 
             // radIceDragon2
             // 
@@ -156,6 +158,7 @@
             this.radIceDragon2.TabIndex = 1;
             this.radIceDragon2.Text = "Ice Dragon";
             this.radIceDragon2.UseVisualStyleBackColor = true;
+            this.radIceDragon2.CheckedChanged += new System.EventHandler(this.radIceDragon2_CheckedChanged);
             // 
             // radFireDragon2
             // 
@@ -166,6 +169,7 @@
             this.radFireDragon2.TabIndex = 0;
             this.radFireDragon2.Text = "Fire Dragon";
             this.radFireDragon2.UseVisualStyleBackColor = true;
+            this.radFireDragon2.CheckedChanged += new System.EventHandler(this.radFireDragon2_CheckedChanged);
             // 
             // txtDragonName2
             // 
@@ -258,6 +262,7 @@
             this.radEarthDragon1.TabIndex = 3;
             this.radEarthDragon1.Text = "Earth Dragon";
             this.radEarthDragon1.UseVisualStyleBackColor = true;
+            this.radEarthDragon1.CheckedChanged += new System.EventHandler(this.radEarthDragon1_CheckedChanged);
             // 
             // radWindDragon1
             // 
@@ -268,6 +273,7 @@
             this.radWindDragon1.TabIndex = 2;
             this.radWindDragon1.Text = "Wind Dragon";
             this.radWindDragon1.UseVisualStyleBackColor = true;
+            this.radWindDragon1.CheckedChanged += new System.EventHandler(this.radWindDragon1_CheckedChanged);
             // 
             // radIceDragon1
             // 
@@ -278,6 +284,7 @@
             this.radIceDragon1.TabIndex = 1;
             this.radIceDragon1.Text = "Ice Dragon";
             this.radIceDragon1.UseVisualStyleBackColor = true;
+            this.radIceDragon1.CheckedChanged += new System.EventHandler(this.radIceDragon1_CheckedChanged);
             // 
             // radFireDragon1
             // 
@@ -288,6 +295,7 @@
             this.radFireDragon1.TabIndex = 0;
             this.radFireDragon1.Text = "Fire Dragon";
             this.radFireDragon1.UseVisualStyleBackColor = true;
+            this.radFireDragon1.CheckedChanged += new System.EventHandler(this.radFireDragon1_CheckedChanged);
             // 
             // txtDragonName1
             // 

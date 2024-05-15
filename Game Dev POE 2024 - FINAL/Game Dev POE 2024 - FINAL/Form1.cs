@@ -55,89 +55,50 @@ namespace Game_Dev_POE_2024___FINAL
             instance = this;
         }
 
-        void SaveValues1()
+        void SaveValues(string[] data, int[] values)
         {
-            p1Data[0] = txtPlayerName1.Text;
-            p1Data[1] = txtDragonName1.Text;
-            if (radFireDragon1.Checked == true)
+            
+            if (data[2] == FIRE_DRAG_NAME)
             {
-                p1Data[2] = FIRE_DRAG_NAME;
-                p1Values[0] = FIRE_DRAG_HP;
-                p1Values[1] = FIRE_DRAG_ATK;
-                p1Values[2] = FIRE_DRAG_SPATK;
-                p1Values[3] = FIRE_DRAG_BLOCK;
+                values[0] = FIRE_DRAG_HP;
+                values[1] = FIRE_DRAG_ATK;
+                values[2] = FIRE_DRAG_SPATK;
+                values[3] = FIRE_DRAG_BLOCK;
             }
-            else if (radIceDragon1.Checked == true)
+            else if (data[2] == ICE_DRAG_NAME)
             {
-                p1Data[2] = ICE_DRAG_NAME;
-                p1Values[0] = ICE_DRAG_HP;
-                p1Values[1] = ICE_DRAG_ATK;
-                p1Values[2] = ICE_DRAG_SPATK;
-                p1Values[3] = ICE_DRAG_BLOCK;
+                values[0] = ICE_DRAG_HP;
+                values[1] = ICE_DRAG_ATK;
+                values[2] = ICE_DRAG_SPATK;
+                values[3] = ICE_DRAG_BLOCK;
             }
-            else if (radWindDragon1.Checked == true)
+            else if (data[2] == WIND_DRAG_NAME)
             {
-                p1Data[2] = WIND_DRAG_NAME;
-                p1Values[0] = WIND_DRAG_HP;
-                p1Values[1] = WIND_DRAG_ATK;
-                p1Values[2] = WIND_DRAG_SPATK;
-                p1Values[3] = WIND_DRAG_BLOCK;
+                values[0] = WIND_DRAG_HP;
+                values[1] = WIND_DRAG_ATK;
+                values[2] = WIND_DRAG_SPATK;
+                values[3] = WIND_DRAG_BLOCK;
             }
-            else if (radEarthDragon1.Checked == true)
+            else if (data[2] == EARTH_DRAG_NAME)
             {
-                p1Data[2] = EARTH_DRAG_NAME;
-                p1Values[0] = EARTH_DRAG_HP;
-                p1Values[1] = EARTH_DRAG_ATK;
-                p1Values[2] = EARTH_DRAG_SPATK;
-                p1Values[3] = EARTH_DRAG_BLOCK;
+                values[0] = EARTH_DRAG_HP;
+                values[1] = EARTH_DRAG_ATK;
+                values[2] = EARTH_DRAG_SPATK;
+                values[3] = EARTH_DRAG_BLOCK;
             }
 
         }
         
-        void SaveValues2()
-        {
-            p2Data[0] = txtPlayerName2.Text;
-            p2Data[1] = txtDragonName2.Text;
-            if (radFireDragon2.Checked == true)
-            {
-                p2Data[2] = FIRE_DRAG_NAME;
-                p2Values[0] = FIRE_DRAG_HP;
-                p2Values[1] = FIRE_DRAG_ATK;
-                p2Values[2] = FIRE_DRAG_SPATK;
-                p2Values[3] = FIRE_DRAG_BLOCK;
-            }
-            if (radIceDragon2.Checked == true)
-            {
-                p2Data[2] = ICE_DRAG_NAME;
-                p2Values[0] = ICE_DRAG_HP;
-                p2Values[1] = ICE_DRAG_ATK;
-                p2Values[2] = ICE_DRAG_SPATK;
-                p2Values[3] = ICE_DRAG_BLOCK;
-            }
-            if (radWindDragon2.Checked == true)
-            {
-                p2Data[2] = WIND_DRAG_NAME;
-                p2Values[0] = WIND_DRAG_HP;
-                p2Values[1] = WIND_DRAG_ATK;
-                p2Values[2] = WIND_DRAG_SPATK;
-                p2Values[3] = WIND_DRAG_BLOCK;
-            }
-            if (radEarthDragon2.Checked == true)
-            {
-                p2Data[2] = EARTH_DRAG_NAME;
-                p2Values[0] = EARTH_DRAG_HP;
-                p2Values[1] = EARTH_DRAG_ATK;
-                p2Values[2] = EARTH_DRAG_SPATK;
-                p2Values[3] = EARTH_DRAG_BLOCK;
-            }
-        }
-
         void btnPlayerSave1_Click(object sender, EventArgs e)
         {
             if (txtPlayerName1.Text != "" && txtDragonName1.Text != "")
             {
-                if (radFireDragon1.Checked == true || radIceDragon1.Checked == true || radWindDragon1.Checked == true || radEarthDragon1.Checked == true)
+                if (p1Data[2] != "")
                 {
+                    SaveValues(p1Data,p1Values);
+                    p1Data[0] = txtPlayerName1.Text;
+                    p1Data[1] = txtDragonName1.Text;
+
                     btnPlayerSave1.Enabled = false;
                     txtPlayerName1.Enabled = false;
                     txtDragonName1.Enabled = false;
@@ -145,7 +106,7 @@ namespace Game_Dev_POE_2024___FINAL
                     radWindDragon1.Enabled = false;
                     radFireDragon1.Enabled = false;
                     radIceDragon1.Enabled = false;
-                    SaveValues1();
+
                     if (btnPlayerSave1.Enabled == false && btnPlayerSave2.Enabled == false)
                         btnStartGame.Enabled = true;
                 }
@@ -156,8 +117,12 @@ namespace Game_Dev_POE_2024___FINAL
         {
             if (txtPlayerName2.Text != "" && txtDragonName2.Text != "")
             {
-                if (radFireDragon2.Checked == true || radIceDragon2.Checked == true || radWindDragon2.Checked == true || radEarthDragon2.Checked == true)
+                if (p2Data[2] != "")
                 {
+                    SaveValues(p2Data,p2Values);
+                    p2Data[0] = txtPlayerName2.Text;
+                    p2Data[1] = txtDragonName2.Text;
+
                     btnPlayerSave2.Enabled = false;
                     txtPlayerName2.Enabled = false;
                     txtDragonName2.Enabled = false;
@@ -165,7 +130,7 @@ namespace Game_Dev_POE_2024___FINAL
                     radWindDragon2.Enabled = false;
                     radFireDragon2.Enabled = false;
                     radIceDragon2.Enabled = false;
-                    SaveValues2();
+
                     if (btnPlayerSave1.Enabled == false && btnPlayerSave2.Enabled == false)
                         btnStartGame.Enabled = true;
                 }
@@ -179,5 +144,44 @@ namespace Game_Dev_POE_2024___FINAL
             this.Hide();
         }
 
+        private void radFireDragon1_CheckedChanged(object sender, EventArgs e)
+        {
+            p1Data[2] = FIRE_DRAG_NAME;
+        }
+
+        private void radIceDragon1_CheckedChanged(object sender, EventArgs e)
+        {
+            p1Data[2] = ICE_DRAG_NAME;
+        }
+
+        private void radWindDragon1_CheckedChanged(object sender, EventArgs e)
+        {
+            p1Data[2] = WIND_DRAG_NAME;
+        }
+
+        private void radEarthDragon1_CheckedChanged(object sender, EventArgs e)
+        {
+            p1Data[2] = EARTH_DRAG_NAME;
+        }
+
+        private void radFireDragon2_CheckedChanged(object sender, EventArgs e)
+        {
+            p2Data[2] = FIRE_DRAG_NAME;
+        }
+
+        private void radIceDragon2_CheckedChanged(object sender, EventArgs e)
+        {
+            p2Data[2] = ICE_DRAG_NAME;
+        }
+
+        private void radWindDragon2_CheckedChanged(object sender, EventArgs e)
+        {
+            p2Data[2] = WIND_DRAG_NAME;
+        }
+
+        private void radEarthDragon2_CheckedChanged(object sender, EventArgs e)
+        {
+            p2Data[2] = EARTH_DRAG_NAME;
+        }
     }
 }

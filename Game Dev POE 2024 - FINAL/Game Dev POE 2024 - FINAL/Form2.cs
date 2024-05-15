@@ -27,6 +27,8 @@ namespace Game_Dev_POE_2024___FINAL
             TakeInitiative();
         }
 
+        //METHODS ------------------------------------------------------------------------------------------------------------------------------------
+
         void Rounds() //Rerolls for initiative every round or every 2 turns
         {
             roundCounter++;
@@ -65,7 +67,7 @@ namespace Game_Dev_POE_2024___FINAL
         void Player1Customise() //Player 1 Initiative - switches info to player 1's turn
         {
             playerturn = 1;
-            rtbBattleLog.Text += $"\n{Form1.instance.p1Data[0]}'s Turn:";
+            rtbBattleLog.Text += $"{Form1.instance.p1Data[0]}'s Turn:\n";
             gbxPlayerTurn.Text = $"{Form1.instance.p1Data[1]}, the {Form1.instance.p1Data[2]} Dragon's Turn"; //Dragon Name, Dragon Type
             Form2.Instance.Text = $"{Form1.instance.p1Data[0]}'s Turn"; //Player Name
             lblPlayerTurnHp.Text = $"HP: {Form1.instance.p1Values[0]}"; //HP
@@ -84,7 +86,7 @@ namespace Game_Dev_POE_2024___FINAL
         void Player2Customise() //Player 2 Initiative - switches info to player 2's turn
         {
             playerturn = 2;
-            rtbBattleLog.Text += $"\n{Form1.instance.p2Data[0]}'s Turn:";
+            rtbBattleLog.Text += $"{Form1.instance.p2Data[0]}'s Turn:\n";
             gbxPlayerTurn.Text = $"{Form1.instance.p2Data[1]}, the {Form1.instance.p2Data[2]} Dragon's Turn"; //Dragon Name, Dragon Type
             Form2.Instance.Text = $"{Form1.instance.p2Data[0]}'s Turn"; //Player Name
             lblPlayerTurnHp.Text = $"HP: {Form1.instance.p2Values[0]}"; //HP
@@ -100,6 +102,8 @@ namespace Game_Dev_POE_2024___FINAL
             }
         }
 
+        //BUTTONS ------------------------------------------------------------------------------------------------------------------------------------
+
         private void btnAttack_Click(object sender, EventArgs e)
         {
             if (playerturn == 1)
@@ -107,7 +111,6 @@ namespace Game_Dev_POE_2024___FINAL
             else if (playerturn == 2)
                 Player2Attack();
             DeclareWinner();
-            Rounds();
         }
 
         private void btnSpecialAttack_Click(object sender, EventArgs e)
@@ -117,7 +120,6 @@ namespace Game_Dev_POE_2024___FINAL
             else if (playerturn == 2)
                 Player2Special();
             DeclareWinner();
-            Rounds();
         }
 
         private void btnBlock_Click(object sender, EventArgs e)
@@ -127,7 +129,6 @@ namespace Game_Dev_POE_2024___FINAL
             else if (playerturn == 2)
                 Player2Block();
             DeclareWinner();
-            Rounds();
         }
 
         private void btnRest_Click(object sender, EventArgs e)
@@ -137,8 +138,9 @@ namespace Game_Dev_POE_2024___FINAL
             else if (playerturn == 2)
                 Player2Rest();
             DeclareWinner();
-            Rounds();
         }
+
+        //BUTTON METHODS -----------------------------------------------------------------------------------------------------------------------------
 
         void Player1Attack()
         {
@@ -146,25 +148,26 @@ namespace Game_Dev_POE_2024___FINAL
             {
                 damage = Form1.instance.p1Values[1];
                 Form1.instance.p2Values[0] -= damage;
-                rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} attacks {Form1.instance.p2Data[1]} for {damage} damage!";
-                rtbBattleLog.Text += $"\n***********************";
+                rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} attacks {Form1.instance.p2Data[1]} for {damage} damage!\n";
+                rtbBattleLog.Text += $"***********************\n";
             }
             else if (blockFlag2 == true) //If player 2 blocks
             {
                 if (Form1.instance.p2Values[3] > Form1.instance.p1Values[1]) //If block is greater than attack
                 {
                     damage = 0;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} blocks {Form1.instance.p1Data[1]}'s whole attacks!";
-                    rtbBattleLog.Text += $"\n***********************";
+                    rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} blocks {Form1.instance.p1Data[1]}'s whole attacks!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
                 else //Attack greater than block
                 {
                     damage = Form1.instance.p1Values[1] - Form1.instance.p2Values[3];
                     Form1.instance.p2Values[0] -= damage;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} attacks {Form1.instance.p2Data[1]} for {damage} damage!";
-                    rtbBattleLog.Text += $"\n***********************";
+                    rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} attacks {Form1.instance.p2Data[1]} for {damage} damage!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
             }
+            blockFlag1 = false;
             blockFlag2 = false;
         }
         void Player2Attack()
@@ -173,41 +176,42 @@ namespace Game_Dev_POE_2024___FINAL
             {
                 damage = Form1.instance.p2Values[1];
                 Form1.instance.p1Values[0] -= damage;
-                rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} attacks {Form1.instance.p1Data[1]} for {damage} damage!";
-                rtbBattleLog.Text += $"\n***********************";
+                rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} attacks {Form1.instance.p1Data[1]} for {damage} damage!\n";
+                rtbBattleLog.Text += $"***********************\n";
             }
             else if (blockFlag1 == true) //If player 1 blocks
             {
                 if (Form1.instance.p1Values[3] > Form1.instance.p2Values[1]) //Block greater than attack
                 {
                     damage = 0;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} blocks {Form1.instance.p2Data[1]}'s whole attacks!";
-                    rtbBattleLog.Text += $"\n***********************";
+                    rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} blocks {Form1.instance.p2Data[1]}'s whole attacks!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
                 else //Attack greater than block
                 {
                     damage = Form1.instance.p2Values[1] - Form1.instance.p1Values[3];
                     Form1.instance.p1Values[0] -= damage;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} attacks {Form1.instance.p1Data[1]} for {damage} damage!";
-                    rtbBattleLog.Text += $"\n***********************\n";
+                    rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} attacks {Form1.instance.p1Data[1]} for {damage} damage!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
             }
             blockFlag1 = false;
+            blockFlag2 = false;
         }
 
         void Player1Block()
         {
             blockFlag1 = true;
             blockFlag2 = false;
-            rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} chooses to block!";
-            rtbBattleLog.Text += $"\n***********************\n";
+            rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} chooses to block!\n";
+            rtbBattleLog.Text += $"***********************\n";
         }
         void Player2Block()
         {
             blockFlag2 = true;
             blockFlag1 = false;
-            rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} chooses to block!";
-            rtbBattleLog.Text += $"\n***********************\n";
+            rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} chooses to block!\n";
+            rtbBattleLog.Text += $"***********************\n";
         }
         void Player1Special()
         {
@@ -215,25 +219,26 @@ namespace Game_Dev_POE_2024___FINAL
             {
                 damage = Form1.instance.p1Values[2];
                 Form1.instance.p2Values[0] -= damage;
-                rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} special attacks {Form1.instance.p2Data[1]} for {damage} damage!";
-                rtbBattleLog.Text += $"\n***********************\n";
+                rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} special attacks {Form1.instance.p2Data[1]} for {damage} damage!\n";
+                rtbBattleLog.Text += $"***********************\n";
             }
             else if (blockFlag2 == true) //If player 2 blocks
             {
                 if (Form1.instance.p2Values[3] > Form1.instance.p1Values[2]) //If block is greater than attack
                 {
                     damage = 0;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} blocks {Form1.instance.p1Data[1]}'s whole attack!";
-                    rtbBattleLog.Text += $"\n***********************\n";
+                    rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} blocks {Form1.instance.p1Data[1]}'s whole attack!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
                 else //Attack greater than block
                 {
                     damage = Form1.instance.p1Values[2] - Form1.instance.p2Values[3];
                     Form1.instance.p2Values[0] -= damage;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} special attacks {Form1.instance.p2Data[1]} for {damage} damage!";
-                    rtbBattleLog.Text += $"\n***********************\n";
+                    rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} special attacks {Form1.instance.p2Data[1]} for {damage} damage!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
             }
+            blockFlag1 = false;
             blockFlag2 = false;
             rest1 = true;
         }
@@ -243,58 +248,66 @@ namespace Game_Dev_POE_2024___FINAL
             {
                 damage = Form1.instance.p2Values[2];
                 Form1.instance.p1Values[0] -= damage;
-                rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} special attacks {Form1.instance.p1Data[1]} for {damage} damage!";
-                rtbBattleLog.Text += $"\n***********************";
+                rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} special attacks {Form1.instance.p1Data[1]} for {damage} damage!\n";
+                rtbBattleLog.Text += $"***********************\n";
             }
             else if (blockFlag1 == true) //If player 1 blocks
             {
                 if (Form1.instance.p1Values[3] > Form1.instance.p2Values[2]) //Block greater than attack
                 {
                     damage = 0;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} blocks {Form1.instance.p2Data[1]}'s whole attack!";
-                    rtbBattleLog.Text += $"\n***********************";
+                    rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} blocks {Form1.instance.p2Data[1]}'s whole attack!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
                 else //Attack greater than block
                 {
                     damage = Form1.instance.p2Values[2] - Form1.instance.p1Values[3];
                     Form1.instance.p1Values[0] -= damage;
-                    rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} special attacks {Form1.instance.p1Data[1]} for {damage} damage!";
-                    rtbBattleLog.Text += $"\n***********************";
+                    rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} special attacks {Form1.instance.p1Data[1]} for {damage} damage!\n";
+                    rtbBattleLog.Text += $"***********************\n";
                 }
             }
             blockFlag1 = false;
+            blockFlag2 = false;
             rest2 = true;
         }
         void Player1Rest() //Player 1 rest - resets all booleans
         {
-            rtbBattleLog.Text += $"\n{Form1.instance.p1Data[1]} is too tired to fight, and rests for a while.";
-            rtbBattleLog.Text += $"\n***********************";
+            rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} is too tired to fight, and rests for a while.\n";
+            rtbBattleLog.Text += $"***********************\n";
             rest1 = false;
+            blockFlag1 = false;
             btnRest.Enabled = false;
             btnRest.Visible = false;
             EnableButtons();
         }
         void Player2Rest() //Player 2 rest - resets all booleans
         {
-            rtbBattleLog.Text += $"\n{Form1.instance.p2Data[1]} is too tired to fight, and rests for a while.";
-            rtbBattleLog.Text += $"\n***********************";
+            rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} is too tired to fight, and rests for a while.\n";
+            rtbBattleLog.Text += $"***********************\n";
             rest2 = false;
+            blockFlag2 = false;
             btnRest.Enabled = false;
             btnRest.Visible = false;
             EnableButtons();
         }
+
+        //OTHER METHODS -------------------------------------------------------------------------------------------------------------------------------
         void DeclareWinner()
         {
             if (Form1.instance.p1Values[0] <= 0)
             {
                 DisableButtons();
-                rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} is the Victor!";
+                lblOpponentHp.Text = $"HP: {Form1.instance.p1Values[0] = 0}";
+                rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} is the Victor!";
             }
             else if (Form1.instance.p2Values[0] <= 0)
             {
                 DisableButtons();
-                rtbBattleLog.Text += $"{Form1.instance.p2Data[1]} is the Victor!";
+                lblOpponentHp.Text = $"HP: {Form1.instance.p2Values[0] = 0}";
+                rtbBattleLog.Text += $"{Form1.instance.p1Data[1]} is the Victor!";
             }
+            else Rounds();
         }
         void DisableButtons()
         {
